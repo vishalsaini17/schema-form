@@ -1,0 +1,29 @@
+.wrapper {
+  padding: 15px;
+  min-height: 100vh;
+  background-color: gainsboro;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .blurBackground {
+    background-image: url("https://unsplash.it/1920/1080/?random");
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    filter: blur(100px);
+  }
+
+  .logBox {
+    position: relative;
+    min-height: 300px;
+    min-width: 400px;
+    background-color: #fff;
+    border-radius: 6px;
+  }
+}

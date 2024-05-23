@@ -1,0 +1,236 @@
+{
+  "type": "object",
+  "formId": "user",
+  "title": "User Form",
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "title": "First Name",
+      "validate": {
+        "required": true,
+        "minLength": 3,
+        "validInputType": "alphabet-only"
+      }
+    },
+    "lastName": {
+      "type": "string",
+      "title": "Last Name",
+      "validate": {
+        "required": true,
+        "minLength": 2,
+        "validInputType": "alphabet-only"
+      }
+    },
+    "email": {
+      "type": "string",
+      "title": "Email",
+      "format": "email",
+      "validate": {
+        "required": true,
+        "minLength": 3,
+        "validInputType": "email"
+      }
+    },
+    "mobile": {
+      "type": "string",
+      "title": "Mobile",
+      "validate": {
+        "required": true,
+        "minLength": 3,
+        "validInputType": "number-only"
+      }
+    },
+    "dob": {
+      "type": "string",
+      "title": "Date of birth",
+      "format": "date",
+      "attributes": {
+        "dateFormat": "DD-MM-YYYY"
+      },
+      "validate": {
+        "required": true
+      }
+    },
+    "gender": {
+      "type": "string",
+      "title": "Gender",
+      "format": "radio",
+      "enum": [
+        {
+          "value": "male",
+          "title": "Male"
+        },
+        {
+          "value": "female",
+          "title": "Female"
+        },
+        {
+          "value": "other",
+          "title": "Other"
+        }
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "title": "Profile Summary",
+      "format": "richtext"
+    },
+    "address": {
+      "type": "object",
+      "title": "Address",
+      "properties": {
+        "street": {
+          "type": "string",
+          "title": "Street"
+        },
+        "city": {
+          "type": "string",
+          "title": "City"
+        },
+        "state": {
+          "type": "string",
+          "title": "state"
+        },
+        "postalCode": {
+          "type": "string",
+          "title": "Postal code"
+        },
+        "country": {
+          "type": "string",
+          "title": "Country"
+        },
+        "landmark": {
+          "type": "string",
+          "title": "Landmark",
+          "validate": {
+            "required": true,
+            "validInputType": "simple-string"
+          }
+        }
+      }
+    },
+    "educations": {
+      "type": "array",
+      "title": "Educations",
+      "items": {
+        "type": "object",
+        "properties": {
+          "institute": {
+            "type": "string",
+            "title": "Institute",
+            "description": "Name of the educational institute"
+          },
+          "degree": {
+            "type": "string",
+            "title": "Degree",
+            "description": "Type of degree obtained"
+          },
+          "fieldOfStudy": {
+            "type": "string",
+            "title": "Field of Study",
+            "description": "Field of study or major"
+          },
+          "batchStart": {
+            "type": "string",
+            "format": "date",
+            "title": "Batch Start",
+            "description": "Start date of the education"
+          },
+          "batchEnd": {
+            "type": "string",
+            "format": "date",
+            "title": "Batch End",
+            "description": "End date of the education"
+          },
+          "grade": {
+            "type": "string",
+            "title": "Grade",
+            "description": "Grade or GPA obtained"
+          },
+          "ActivitiesAndExp": {
+            "type": "string",
+            "title": "Activities & Experiences",
+            "description": "Activities or experiences during education"
+          }
+        }
+      },
+      "minimum": 1
+    },
+    "workDetails": {
+      "type": "array",
+      "title": "Work Details",
+      "items": {
+        "type": "object",
+        "properties": {
+          "jobTitle": {
+            "type": "string",
+            "title": "Job Title",
+            "description": "Title of the job"
+          },
+          "employmentType": {
+            "type": "string",
+            "title": "Employment Type",
+            "description": "Type of employment",
+            "enum": ["Full-time", "Part-time", "Self-employed", "Freelance", "Internship", "Trainee"]
+          },
+          "companyName": {
+            "type": "string",
+            "title": "Company Name",
+            "description": "Name of the company"
+          },
+          "location": {
+            "type": "string",
+            "title": "Location",
+            "description": "Location of the job"
+          },
+          "locationType": {
+            "type": "string",
+            "title": "Location Type",
+            "description": "Type of work location",
+            "enum": ["On-site", "Hybrid", "Remote"]
+          },
+          "currentlyWorkingForSameRole": {
+            "type": "boolean",
+            "title": "Currently Working for Same Role",
+            "description": "Indicates if currently working for the same role"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date",
+            "title": "Start Date",
+            "description": "Start date of employment"
+          },
+          "endDate": {
+            "type": ["string", "null"],
+            "format": "date",
+            "title": "End Date",
+            "description": "End date of employment"
+          },
+          "describeWork": {
+            "type": "string",
+            "title": "Describe your work",
+            "format": "richtext"
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "title": "Skills",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Skill Name",
+            "description": "Name of the skill"
+          },
+          "rating": {
+            "type": "string",
+            "title": "Skill Rating"
+          }
+        }
+      }
+    }
+  }
+}

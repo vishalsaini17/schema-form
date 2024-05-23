@@ -1,0 +1,10 @@
+.contentOnly {
+  :global(.ql-container.ql-snow) {
+    border: 0;
+  }
+
+  [contenteditable=false] {
+    background-color: transparent;
+    padding: 0;
+  }
+}
